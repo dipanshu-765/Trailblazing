@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Search results
+        </title>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/search2.css')}}">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+        <script src="{{ url_for('static', filename='JS/filters2.js')}}"></script>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/searchlinks.css')}}">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-custom" id="navbar">
+            <a class="navbar-brand" href="#" id="logo-text">Trailblazing</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li>
+                    <form class="form-inline" method="GET" action="search">
+                        <i class="fa fa-search icon" id="#search-icon"></i>
+                        <input type="text" class="form-control" placeholder="Search a blog or a post"
+                          aria-label="Search" id="search" name="search">
+                    </form>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="../../blogs" id="view-blogs-collapse">{{name}}
+                        <span class="sr-only">(current)</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../../blogs/new" id="create-blog">Create Blog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../../logout" class="nav-link" id="logout">Logout</a>
+                  </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="filters">
+            <h6 class="display-6">View:</h6>
+            <button type="button" class="btn btn-custom" id="posts-only" onclick="postsOnly()">Posts Only</button>
+            <button type="button" class="btn btn-custom" id="blogs-only" onclick="blogsOnly()">Blogs Only</button>
+        </div>
+        {% for blog in blogs %}
+            <div class="blogs">
+                <h3 class="display-5"><a href="../../posts/{{blog['username']}}">{{ blog['username'] }}</a></h3>
+                <p class="lead">{{ blog['description']}}</p>
+                <br>
+            </div>
+        {% endfor %}
+        {% for post in posts %}
+            <div class="posts">
+                <h3 class="display-5">{{ post['title'] }}</h3>
+                <p class="lead">{{ post['content'] }}</p>
+                <p class="lead">{{ post['author'] }}</p>
+                <h6 class="display-6">{{ post['created_date'] }}</h6>
+            </div>
+        {% endfor %}
+    </body>
+</html>

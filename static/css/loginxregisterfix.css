@@ -1,0 +1,17 @@
+@media only screen and (min-width: 1080px){
+    body{
+        background-color: #eeeeee;
+    }
+    #shape, #illustration{
+        display: none;
+    }
+
+    #login-form{
+        margin-left: 35vw;
+        margin-right: 45vw;
+    }
+    #register-form{
+        margin-left: 35vw;
+        margin-right: 45vw;
+    }
+}

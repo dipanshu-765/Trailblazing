@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Sign Up</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/register2.css') }}">
+    </head>
+    <body>
+        <form id="register-form" class="shadow mb-5 rounded" action="/auth/register" method="post">
+            <h1 class="display-5" id="sign-up">Sign Up</h1>
+                <br>
+                <br>
+            <label for="name">
+                Enter Your Full name
+                <br>
+                <input type="text" name="name" id="name" placeholder="Johnny John" required maxlength="30">
+            </label>
+            <br><br>
+            <label for="email">
+                Enter your EMail address
+                <br>
+                <input type="text" name="email" id="email" placeholder="Example: johnnyjohn@mail.com" required maxlength="30" pattern="\w+@\w+.com">
+            </label>
+            <br><br>
+            <label for="password">
+                Enter Password
+                <br>
+                <input type="password" name="password" id="password" minlength="8" required>
+                <small id="passwordHelp" class="form-text text-muted">
+                    The password must be atleast 8 characters long
+                </small>
+            </label>
+            <br><br><br>
+            <label for="terms">
+                <input type="checkbox" name="terms" id="terms" required>
+                I agree to the <a href="TermsOfService.html">Terms of Service</a>
+            </label>
+            <br>
+            <button type="submit" class="btn btn-custom" id="submit">Sign Up</button>
+        </form>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

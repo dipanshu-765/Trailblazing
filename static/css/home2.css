@@ -1,0 +1,111 @@
+body{
+    background-color: #1a1a1a;
+}
+
+#map{
+    opacity: 0.2;
+    position: absolute;
+    width: 100vw;
+}
+h1{
+    color: #ffffff;
+    text-align: center;
+    display: inline-block;
+    margin-top: 30vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+@media only screen and (min-width: 600px){
+    h1{
+        margin-left: 30vw;
+        margin-right: 30vw;
+        width: 40vw;
+    }
+}
+#container{
+    position: relative;
+}
+footer{
+    margin-top: 100vh;
+    background-color: #1d2b34;
+    height: 45vh;
+}
+
+p{
+    color: #ffffff;
+    text-align: center;
+    margin-top: 5vh;
+}
+#credit{
+    float: right;
+    opacity: 0.5;
+    color: #ffffff;
+}
+footer a{
+    display: block;
+    font-size: medium;
+    font-weight: lighter;
+    width: 100vw;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align: center;
+}
+footer a:hover{
+    font-weight: normal;
+    text-decoration: none;
+}
+@media only screen and (max-width: 600px){
+    #Content{
+        margin-bottom: 10vh;
+    }
+}
+@media only screen and (max-width: 850px){
+    #map{
+        display: none;
+    }
+}
+#navbar{
+    color: #ffffff;
+}
+#search{
+    width: 70vw;
+    opacity: 0;
+}
+#menu-icon{
+    background-color: #ff7357;
+}
+a{
+    color: #ffffff;
+}
+.collapsible{
+    background-color: #1a1a1a;
+    color: #ff7357;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    height: 5vh;
+    position: absolute;
+    display: inline-block;
+}
+#menu-icon{
+    width: 5vw;
+}
+#view-blogs{
+    color: #ffffff;
+    margin-top: 90vh;
+}
+@media only screen and (min-width: 900px){
+    a.nav-link:hover{
+        background-color: #ff7357;
+        color:white;
+    }
+    #menu-icon{
+        width: 3vw;
+    }
+}
+#logo-text{
+    margin-left: 4vw;
+    margin-right: 3vw;
+    color: #ffffff;
+}
+

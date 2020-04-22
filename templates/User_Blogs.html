@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TrailBlazing</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user-blog-profile.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/UserBlogs.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar-cheat.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom" id="navbar">
+        <a class="navbar-brand" href="#" id="logo-text">Trailblazing</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li>
+                <form class="form-inline" method="GET" action="../search">
+                    <input class="form-control" type="search" placeholder="Search a blog or a post"
+                      aria-label="Search" id="search">
+                </form>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../" id="view-blogs-collapse">{{name}}
+                    <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blogs/new" id="create-blog">Create Blog</a>
+              </li>
+              <li class="nav-item">
+                <a href="logout" class="nav-link" id="logout">Logout</a>
+              </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+<div class="container" id="blogs">
+        {% if is_user %}
+        <h2 class="display-2 large-heading">{{ email }} blogs</h2>
+        <h2 class="display-3 mob-heading">{{ email }} blogs</h2>
+        <br><br><br>
+            {% if blogs|length > 0 %}
+                {% for blog in blogs %}
+        <br>
+                <h3 class="display-5 blog-title">
+                    <a href="/posts/{{ blog.username }}">
+                        {{ blog.username }}
+                    </a>
+                </h3>
+                <p class="lead description">
+                    {{ blog.description }}
+                </p>
+                <br><br><br>
+                {% endfor %}
+            {% else %}
+                <p class="lead footer">
+                    You don't have any blogs as of now.
+                    <a href="blogs/new">
+                        Create a Blog
+                    </a>
+                </p>
+            {% endif %}
+        {% else %}
+        <h2 class="display-2 large-heading">{{ name2 }}'s blogs</h2>
+        <h2 class="display-3 mob-heading">{{ name2 }}'s blogs</h2>
+        <br><br><br>
+            {% if blogs|length > 0 %}
+                {% for blog in blogs %}
+        <h3 class="display-5 blog-title">
+            <a href="/posts/{{ blog.username }}">
+                {{ blog.username }}
+            </a>
+        </h3>
+            <p class="lead description">
+                {{ blog.description }}
+            </p>
+            <br><br><br>
+                {% endfor %}
+            {% else %}
+            <p class="lead footer">
+                This User does not have any blogs as of now. Check again later!
+            </p>
+        {% endif %}
+    {% endif %}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>

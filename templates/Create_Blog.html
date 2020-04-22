@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ blog_title }}</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/createblogs.css')}}">
+</head>
+<body>
+<form id="new-blog-form" method="post" action="new">
+    <label for="blog_name">
+        <h4 class="display-3">Enter Blog Name</h4>
+        <h6 class="display-4 mob-only">Enter Blog Name</h6>
+        <input type="text" name="blog_name" id="blog_name">
+    </label>
+    <br>
+    <label for="description">
+        <h4 class="display-3">Enter Description</h4>
+        <h6 class="display-4 mob-only">Enter Description</h6>
+        <textarea rows="7" columns="7" name="description" id="description"></textarea>
+    </label>
+    <br>
+    <a href="#" id="submit">
+        <button type="submit" class="btn btn-custom my-2 my-sm-0" id="submit-button">Create Blog</button>
+    </a>
+</form>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>

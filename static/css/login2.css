@@ -1,0 +1,84 @@
+body{
+    background-color: #1a1a1a;
+}
+h1{
+    background-color: #ff7357;
+}
+#login-form{
+    margin-top: 10vh;
+}
+#submit{
+    color: #1a1a1a;
+    background-color: #ff7357;
+}
+label{
+    color: #ffffff;
+}
+input{
+    width: 90vw;
+    background-color: #2b2b2b;
+    border: none;
+    height: 6vh;
+}
+h1{
+    text-align: center;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+#ForgotPassword{
+    color: #ffffff;
+}
+@media only screen and (min-width: 750px){
+    #login-form{
+        width: 60vw;
+        height: 85vh;
+        margin-left: 20vw;
+    }
+    input{
+        width: 55vw;
+    }
+    label{
+        margin-left: 3vw;
+    }
+    #ForgotPassword{
+        margin-left: 3vw;
+    }
+    #submit{
+        margin-left: 3vw;
+    }
+}
+@media only screen and (max-width: 750px){
+    #login-form{
+        margin-left: 5vw;
+        margin-right: 5vw;
+        height: 85vh;
+    }
+    input{
+        width: 85vw;
+    }
+}
+@media only screen and (min-width: 1110px){
+    label{
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+    input{
+        width: 26vw;
+        padding-left: 1vw;
+        height: 6vh;
+    }
+    #login-form{
+        width: 30vw;
+        height: 85vh;
+        margin-left: 35vw;
+        margin-right: 35vw;
+        background-color: #1f1f1f;
+    }
+    h1{
+        width: 30vw;
+        margin-top: 2vh;
+    }
+    #submit{
+        margin-left: 2vw;
+    }
+}

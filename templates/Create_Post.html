@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Post</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/createposts.css')}}">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+<form id="new-post-form" method="post" action="/posts/new/{{blog_id}}">
+    <label for="title">
+        <h4 class="display-3">Enter Post Title</h4>
+        <h6 class="display-4 mob-only">Enter Post Title</h6>
+        <input type="text" name="title" id="title">
+    </label>
+    <br>
+    <label for="content">
+        <h4 class="display-3">Write Post</h4>
+        <h6 class="display-4 mob-only">Write Post </h6>
+        <textarea rows="7" columns="7" name="content" id="content"></textarea>
+    </label>
+    <br>
+    <a href="#" id="submit">
+        <button type="submit" class="btn btn-custom my-2 my-sm-0" id="submit-button">Publish</button>
+    </a>
+</form>
+
+</body>
+</html>
